@@ -6,44 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Aplikasi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: #f5f7fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        .login-container {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .login-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .form-control {
-            border-radius: 0.5rem;
-        }
-
-        .btn-primary {
-            border-radius: 0.5rem;
-            font-weight: 600;
-        }
-
-        .text-muted {
-            font-size: 0.9rem;
-        }
-    </style>
+   <link rel="stylesheet" href="{{ asset('login.css') }}">
 </head>
 
 <body>
