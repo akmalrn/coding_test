@@ -41,17 +41,11 @@
         <a href="{{ route('dashboard.admin') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}">
             <i class="fas fa-tachometer-alt me-2"></i> Dashboard
         </a>
-        <a href="/" class="{{ Request::is('users*') ? 'active' : '' }}">
-            <i class="fas fa-users me-2"></i> Users
+        <a href="{{ route('authors.index') }}" class="{{ Request::is('dashboard/authors') ? 'active' : '' }}">
+            <i class="fas fa-users me-2"></i> Authors
         </a>
-        <a href="/" class="{{ Request::is('products*') ? 'active' : '' }}">
-            <i class="fas fa-box-open me-2"></i> Products
-        </a>
-        <a href="/" class="{{ Request::is('orders*') ? 'active' : '' }}">
-            <i class="fas fa-shopping-cart me-2"></i> Orders
-        </a>
-        <a href="/" class="{{ Request::is('settings*') ? 'active' : '' }}">
-            <i class="fas fa-cog me-2"></i> Settings
+        <a href="{{ route('books.index') }}" class="{{ Request::is('dashboard/books') ? 'active' : '' }}">
+            <i class="fas fa-book-open me-2"></i> Books
         </a>
     </div>
 

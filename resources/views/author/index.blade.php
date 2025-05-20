@@ -8,6 +8,13 @@
         </button>
     </div>
 
+    <div class="col-5 mb-3">
+        <form action="{{ route('authors.search') }}" method="GET" class="d-flex">
+            <input type="text" name="query" id="searchInput" class="form-control me-2" placeholder="Search authors..." required>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>    
+
     <table class="table table-bordered">
         <thead>
             <tr>
