@@ -11,7 +11,7 @@ class AuthorController extends Controller
     public function index()
     {
         $authors = Author::all();
-        return response()->json($authors);
+        return view('author.index', compact('authors'));
     }
 
     public function store(Request $request)
@@ -25,10 +25,7 @@ class AuthorController extends Controller
 
         $author = Author::create($validated);
 
-        return response()->json([
-            'message' => 'Penulis berhasil ditambahkan.',
-            'data' => $author
-        ], 201);
+        return redirect()->route('authors.index')->with('success', 'Penulis berhasil ditambahkan.');
     }
 
     public function show($id)
@@ -41,7 +38,10 @@ class AuthorController extends Controller
             ], 404);
         }
 
-        return response()->json($author);
+        return response()->json([
+            'first_name' => $author->first_name,
+            'last_name' => $author->last_name
+        ], 200);
     }
 
     public function update(Request $request, $id)
@@ -49,9 +49,7 @@ class AuthorController extends Controller
         $author = Author::find($id);
 
         if (!$author) {
-            return response()->json([
-                'message' => 'Penulis tidak ditemukan.'
-            ], 404);
+            return redirect()->route('authors.index')->with('error', 'Penulis tidak ditemukan.');
         }
 
         $validated = $request->validate([
@@ -61,10 +59,7 @@ class AuthorController extends Controller
 
         $author->update($validated);
 
-        return response()->json([
-            'message' => 'Penulis berhasil diperbarui.',
-            'data' => $author
-        ]);
+        return redirect()->route('authors.index')->with('success', 'Penulis berhasil diperbarui.');
     }
 
     public function destroy($id)
